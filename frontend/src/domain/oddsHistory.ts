@@ -12,6 +12,12 @@ export type OddsHistory = Record<string, OddsPoint[]>
 const HISTORY_WINDOW_MS = 5 * 60 * 1000
 const MAX_POINTS = 60
 
+export function isWaitingForOddsUpdate(hasData: boolean, gameCount: number, history: OddsHistory) {
+  if (!hasData) return true
+  if (gameCount === 0) return false
+  return !Object.values(history).some((points) => points.length >= 2)
+}
+
 export function appendOddsHistory(
   history: OddsHistory,
   games: Game[],

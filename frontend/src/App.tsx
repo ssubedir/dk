@@ -3,6 +3,8 @@ import { AnalyticsPanel } from './components/AnalyticsPanel'
 import { LoadingState } from './components/LoadingState'
 import { OddsTable } from './components/OddsTable'
 import { StatusBadge } from './components/StatusBadge'
+import { WaitingForOddsNotice } from './components/WaitingForOddsNotice'
+import { isWaitingForOddsUpdate } from './domain/oddsHistory'
 import { useLiveOdds } from './hooks/useLiveOdds'
 import './App.css'
 
@@ -16,6 +18,7 @@ function App() {
   }, [data?.league])
 
   const stale = Boolean(data && (data.stale || error || webSocketConnected === false))
+  const waitingForOddsUpdate = isWaitingForOddsUpdate(Boolean(data), data?.games.length ?? 0, history)
 
   return (
     <div className="app-shell">
@@ -31,6 +34,8 @@ function App() {
         </a>
         <StatusBadge stale={stale} loading={!data && connecting} unavailable={!data && Boolean(error)} />
       </header>
+
+      {waitingForOddsUpdate && !error && <WaitingForOddsNotice hasInitialOdds={Boolean(data)} />}
 
       <main>
         <section className="intro" aria-labelledby="page-title">
