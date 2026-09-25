@@ -2,7 +2,7 @@
 
 A Go backend reads DraftKings NFL odds and pushes them to a React page. It shows only the main moneyline, spread, and total markets—not props or alternate lines.
 
-- **Live app:** [<placeholder>](https://<placeholder>)
+- **Live app:** [dk-rtdw.onrender.com](https://dk-rtdw.onrender.com)
 - **Source code:** [github.com/ssubedir/dk](https://github.com/ssubedir/dk)
 
 The app runs one league at a time. The Docker image builds React and serves it alongside the Go API.
