@@ -40,7 +40,7 @@ With WebSocket on, Go fetches the starting snapshot and then listens for changes
 
 The first recovery can start right away; repeated attempts are spaced by `ODDS_REFRESH_INTERVAL` (30 seconds in the checked-in profiles). With WebSocket off, that setting is the normal REST poll interval.
 
-For an NFL Docker run, set `env_file` in the root [Compose file](../compose.yaml) to `./backend/.env.nfl`. Compose passes the file at runtime; [`.dockerignore`](../.dockerignore) keeps it out of the image. Render and other hosts need their own runtime settings—Compose does not configure them.
+For an NFL Docker run, the root [Compose file](../compose.yaml) already loads `./backend/.env.nfl`. Compose passes the file at runtime; [`.dockerignore`](../.dockerignore) keeps it out of the image. Render and other hosts need their own runtime settings—Compose does not configure them.
 
 ## API
 
