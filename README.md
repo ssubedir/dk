@@ -22,10 +22,12 @@ The app runs one league at a time. The Docker image builds React and serves it a
 With Docker installed:
 
 ```bash
-docker compose up --build
+docker compose up --build -d
 ```
 
 Open `http://localhost:10000`. The checked-in Compose profile selects NFL and contains no credentials.
+
+Use `docker compose logs -f odds` to follow the server logs and `docker compose down` to stop the app.
 
 ### Native development
 
