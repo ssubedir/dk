@@ -1,9 +1,11 @@
 # DraftKings live odds
 
-A Go backend reads DraftKings NFL odds and pushes them to a React page. It shows only the main moneyline, spread, and total markets—not props or alternate lines.
+Linewatch is a live NFL odds dashboard for DraftKings. A Go service normalizes the main moneyline, spread, and total markets and streams updates to a React UI. Player props and alternate lines are excluded.
 
 - **Live app:** [dk-rtdw.onrender.com](https://dk-rtdw.onrender.com)
 - **Source code:** [github.com/ssubedir/dk](https://github.com/ssubedir/dk)
+
+![Linewatch showing live DraftKings NFL odds, price movement, and latency metrics](dk.png)
 
 The app runs one league at a time. The Docker image builds React and serves it alongside the Go API.
 
