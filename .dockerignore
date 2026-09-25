@@ -1,0 +1,17 @@
+.git
+*.pdf
+Reqs.md
+.gitignore
+frontend/node_modules/
+frontend/dist/
+frontend/.env*
+# Compose injects the host env_file at runtime; never bake backend dotenv files into the image.
+backend/.env*
+backend/web/
+backend/*.exe
+backend/*.log
+backend/data/
+.gocache/
+.gotmp/
+.bun-cache*/
+**/*.log

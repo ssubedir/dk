@@ -1,0 +1,16 @@
+name: draftkings-odds
+
+services:
+  odds:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # Compose injects this host file as runtime environment; it is not copied into the image.
+    env_file:
+      - path: ./backend/.env.nfl
+        required: false
+    environment:
+      PORT: "10000"
+      FRONTEND_DIST: /srv/frontend
+    ports:
+      - "10000:10000"
